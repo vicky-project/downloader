@@ -53,7 +53,7 @@
 
         ytdl
           .getInfo(url)
-          .then((info) => console.log(JSON.stringify(info)))
+          .then((info) => alert(info))
           .catch((err) => {
             throw err;
           });
