@@ -42,7 +42,7 @@
 
       $("#form-query").submit(function (e) {
         e.preventDefault();
-        var query = $(this).find("#query");
+        var query = $(this).find("#query").val();
 
         if (undefined == query || query == "") {
           alert("Input query kosong");
