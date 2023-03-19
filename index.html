@@ -40,7 +40,8 @@
         // For more info, see https://www.npmjs.com/package/proxyquireify
       });
 
-      $("#form-query").submit(function () {
+      $("#form-query").submit(function (e) {
+        e.preventDefault();
         var query = window.location.href
           .slice(window.location.href.indexOf("?") + 1)
           .split("&");
