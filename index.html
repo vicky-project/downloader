@@ -26,12 +26,20 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <script src="https://vicky-project.github.io/downloader/lib/index.js"></script>
+    <script src="https://vicky-project.github.io/downloader/lib/ytdl.js"></script>
+    <script src="https://vicky-project.github.io/downloader/lib/ytpl.js"></script>
+    <script src="https://vicky-project.github.io/downloader/lib/ytsr.js"></script>
     <script>
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
       const ytdl = window.require("ytdl-core-browser")({
-        // proxyUrl: 'https://cors-anywhere.herokuapp.com/',
-        // proxyquireStubs: {}, arguments mapped directly to proxyquireify
-        // For more info, see https://www.npmjs.com/package/proxyquireify
+        proxyUrl: proxyUrl,
+      });
+      const ytpl = window.require("ytpl-browser")({
+        proxyUrl: proxyUrl,
+      });
+      const ytsr = window.require("ytsr-browser")({
+        proxyUrl: proxyUrl,
       });
 
       $("#form-query").submit(function () {
