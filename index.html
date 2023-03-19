@@ -48,11 +48,11 @@
           alert("Input query kosong");
           return;
         }
-        query = decodeURIComponent(query);
-        console.log(query);
+        var url = decodeURIComponent(query);
+        //console.log(query);
 
         ytdl
-          .getInfo(query)
+          .getInfo(url)
           .then((info) => console.log(JSON.stringify(info)))
           .catch((err) => {
             throw err;
