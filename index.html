@@ -48,7 +48,8 @@
           alert("Input query kosong");
           return;
         }
-        console.log(decodeURIComponent(query));
+        query = decodeURIComponent(query);
+        console.log(query);
 
         ytdl
           .getInfo(query)
