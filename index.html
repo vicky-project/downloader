@@ -45,9 +45,16 @@
         var query = $(this).find("#query");
 
         if (undefined == query || query == "") {
-          return false;
+          return alert("Input query kosong");
         }
-        console.log(query);
+        console.log(decodeURIComponent(query));
+
+        ytdl
+          .getInfo(query)
+          .then((info) => console.log(info))
+          .catch((err) => {
+            throw err;
+          });
       });
     </script>
   </body>
