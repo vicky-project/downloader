@@ -45,13 +45,14 @@
         var query = $(this).find("#query");
 
         if (undefined == query || query == "") {
-          return alert("Input query kosong");
+          alert("Input query kosong");
+          return;
         }
         console.log(decodeURIComponent(query));
 
         ytdl
           .getInfo(query)
-          .then((info) => console.log(info))
+          .then((info) => console.log(JSON.stringify(info)))
           .catch((err) => {
             throw err;
           });
