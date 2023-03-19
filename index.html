@@ -42,9 +42,11 @@
 
       $("#form-query").submit(function (e) {
         e.preventDefault();
-        var query = window.location.href
-          .slice(window.location.href.indexOf("?") + 1)
-          .split("&");
+        var query = $(this).find("#query");
+
+        if (undefined == query || query == "") {
+          return false;
+        }
         console.log(query);
       });
     </script>
